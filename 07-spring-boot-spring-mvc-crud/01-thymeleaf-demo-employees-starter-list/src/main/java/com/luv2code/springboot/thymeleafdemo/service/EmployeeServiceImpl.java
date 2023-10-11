@@ -21,7 +21,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Override
 	public List<Employee> findAll() {
-		return employeeRepository.findAll();
+		//return employeeRepository.findAll();
+
+		/*
+		* We are going to use the recent custom
+		* method declared in the repository.
+		* */
+		return employeeRepository.findAllByOrderByLastNameAsc();
 	}
 
 	@Override

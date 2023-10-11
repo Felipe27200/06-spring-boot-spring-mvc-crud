@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <title>Save Employee</title>
+</head>
+<body>
+  <div class="container">
+    <h3>Employee Directory</h3>
+
+    <p>Save Employee</p>
+
+    <form action="#" th:action="@{/employees/save}" th:object="${employee}" method="POST">
+      <label for="first_name" class="form-label">First Name:</label>
+      <input type="text" name="first_name" id="first_name" th:field="*{firstName}" class="form-control mb-4 w-25">
+
+      <label for="last_name" class="form-label">Last Name:</label>
+      <input type="text" name="last_name" id="last_name" th:field="*{lastName}" class="form-control mb-4 w-25">
+
+      <label for="email" class="form-label">Email:</label>
+      <input type="text" name="email" id="email" th:field="*{email}" class="form-control mb-4 w-25">
+
+      <button type="submit" class="btn btn-info col-2">Save</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/employees/list}">
+      Back to Employees List
+    </a>
+  </div>
+</body>
+</html>
