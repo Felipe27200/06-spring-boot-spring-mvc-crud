@@ -56,12 +56,25 @@
 					<a class="btn btn-info btn-sm" th:href="@{/employees/show-form-update(employeeId=${tempEmployee.id})}">
 						Update
 					</a>
+					<a class="btn btn-danger btn-sm delete-button" th:href="@{/employees/delete(employeeId=${tempEmployee.id})}">
+						Delete
+					</a>
 				</td>
 			</tr>
 		</tbody>		
 	</table>
-	
 </div>
+
+<script>
+	const deleteBtn = document.querySelector(".delete-button");
+
+	deleteBtn.addEventListener('click', (event) => {
+		let confirm = confirm("Are you sure you want to delete this employee?");
+
+		if (!confirm)
+			event.preventDefault();
+	});
+</script>
 	
 </body>
 </html>
